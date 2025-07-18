@@ -10,6 +10,9 @@ class Logger {
     Logger(const Logger& other) = delete;
     Logger& operator=(const Logger& other) = delete;
 
+    ~Logger() {
+        if(!instance) delete instance;
+    }
 
     static Logger* get_Instance() {
         if (!instance) {
